@@ -1,0 +1,15 @@
+# IDE config
+.idea
+
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Test coverage
+coverage
+
+# Webpack directories
+.webpack
