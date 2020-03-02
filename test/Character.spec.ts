@@ -1,15 +1,19 @@
 import Character from "@/Character";
 
 describe('Character', () => {
-    it('should initially be alive.', () => {
-        const character = new Character();
 
-        expect(character.isAlive()).toBe(true);
-    });
+    describe('when created', () => {
 
-    it("should initially have 1000 hp.", () => {
-        const character = new Character();
+        it('should be alive.', () => {
+            const character = new Character();
 
-        expect(character.getHealth()).toBe(1000);
+            expect(character.isAlive()).toBe(true);
+        });
+
+        it("should have 1000 health.", () => {
+            const character = new Character();
+
+            expect(character.getHealth()).toBe(1000);
+        });
     });
 });
