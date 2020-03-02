@@ -28,11 +28,11 @@ Character:
                   then the character is dead
     State:
         * alive / dead
-            - given a new character
+            + given a new character
               when spawning
               character is alive
         * has 1000 hp (health points) at the beginning
-            - given a new character
+            + given a new character
               when spawning
               character has 1000hp
 

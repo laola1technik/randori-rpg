@@ -6,4 +6,10 @@ describe('Character', () => {
 
         expect(character.isAlive()).toBe(true);
     });
+
+    it("should initially have 1000 hp.", () => {
+        const character = new Character();
+
+        expect(character.getHealth()).toBe(1000);
+    });
 });

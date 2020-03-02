@@ -4,4 +4,7 @@ export default class Character {
         return true;
     }
 
+    getHealth() {
+        return 1000;
+    }
 }
