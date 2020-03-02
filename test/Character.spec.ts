@@ -1,9 +1,4 @@
-class Character {
-
-    isAlive() {
-        return true;
-    }
-}
+import Character from "@/Character";
 
 describe('Character', () => {
     it('should initially be alive.', () => {
