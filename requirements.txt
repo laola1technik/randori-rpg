@@ -21,6 +21,9 @@ Character:
                   then the dead character stays dead
         * Deal Damage
             * can reduce hp of another character
+                - given a character with 1000hp
+                  when receive a damage of 42hp
+                  then the character has a hp of 958
             * HP can not go below 0
             * dies if health below 1
                 - given a character with 1000 hp

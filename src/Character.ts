@@ -1,3 +1,4 @@
+import Weapon from "@/Weapon";
 
 export default class Character {
     private readonly health: number;
@@ -12,5 +13,11 @@ export default class Character {
 
     getHealth() {
         return this.health;
+    }
+
+    equip(weapon: Weapon) {
+    }
+
+    attack(otherCharacter: Character) {
     }
 }
