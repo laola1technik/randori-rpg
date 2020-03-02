@@ -2,19 +2,44 @@ Character:
     Actions:
         * Heal
             * can heal a live character
+                - given a live character with 100 hp
+                  when healing is applied with 20 hp
+                  then the number of hp is 120hp
             * HP can not rise above 1000 hp
+                - given a life character with 1000 hp
+                  when healing is applied to the same object
+                  then the number of HP is not increased
+                - given a life character with 999 hp,
+                  when healing is applied for 2
+                  then the number of hp is 1000 HP
+                - given a live character with 1000hp
+                  when healing with -10 is applied
+                  then throw exception
             * dead characters can NOT be healed
+                - given a dead character and a live character,
+                  when the live character heals the dead character,
+                  then the dead character stays dead
         * Deal Damage
             * can reduce hp of another character
             * HP can not go below 0
             * dies if health below 1
+                - given a character with 1000 hp
+                  when receive damage of 1000 hp
+                  then the character is dead
     State:
         * alive / dead
+            - given a new character
+              when spawning
+              character is alive
         * has 1000 hp (health points) at the beginning
+            - given a new character
+              when spawning
+              character has 1000hp
 
 Questions:
     * can a character heal itself?
     * can a character deal damage to itself?
+    * can a dead character heal?
 
 Design considerations
     * actions should be dynamic
