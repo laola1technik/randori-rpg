@@ -1,0 +1,21 @@
+Character:
+    Actions:
+        * Heal
+            * can heal a live character
+            * HP can not rise above 1000 hp
+            * dead characters can NOT be healed
+        * Deal Damage
+            * can reduce hp of another character
+            * HP can not go below 0
+            * dies if health below 1
+    State:
+        * alive / dead
+        * has 1000 hp (health points) at the beginning
+
+Questions:
+    * can a character heal itself?
+    * can a character deal damage to itself?
+
+Design considerations
+    * actions should be dynamic
+
