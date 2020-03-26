@@ -21,7 +21,7 @@ export default class Character {
     }
 
     private receiveDamage(damage: number) {
-        if(this.health >= damage) {
+        if (this.health >= damage) {
             this.health = this.health - damage;
         } else {
             this.health = 0;
