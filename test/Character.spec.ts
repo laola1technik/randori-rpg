@@ -1,4 +1,4 @@
-import Character, {BASE_DAMAGE, BASE_HEALTH} from "@/Character";
+import Character, {BASE_DAMAGE, BASE_HEALING, BASE_HEALTH} from "@/Character";
 
 
 describe('Character', () => {
@@ -45,6 +45,22 @@ describe('Character', () => {
             killCharacter(character, opponent);
 
             expect(opponent.isAlive()).toBe(false);
+        });
+    });
+    describe("when healing", () => {
+        let injured: Character;
+
+        beforeEach(() => {
+            injured = new Character();
+            injured.attack(injured);
+        });
+        it('should increase health of healed character', function () {
+            const injuredHealth = injured.getHealth();
+
+            character.heal(injured);
+
+            const expectedHealth = injuredHealth + BASE_HEALING;
+            expect(injured.getHealth()).toBe(expectedHealth);
         });
     });
 });

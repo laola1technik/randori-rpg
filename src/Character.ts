@@ -1,5 +1,6 @@
 const BASE_HEALTH = 1000;
 const BASE_DAMAGE = 42;
+const BASE_HEALING = 21;
 
 export default class Character {
     private health: number;
@@ -27,9 +28,18 @@ export default class Character {
             this.health = 0;
         }
     }
+
+    heal(injured: Character) {
+        injured.receiveHealth(BASE_HEALING);
+    }
+
+    private receiveHealth(healing: number) {
+        this.health += healing;
+    }
 }
 
 export {
     BASE_HEALTH,
     BASE_DAMAGE,
+    BASE_HEALING,
 }
