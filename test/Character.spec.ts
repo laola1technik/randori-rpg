@@ -1,4 +1,4 @@
-import Character from "@/Character";
+import Character, {BASE_DAMAGE} from "@/Character";
 
 describe('Character', () => {
 
@@ -18,14 +18,13 @@ describe('Character', () => {
     });
 
     describe('when attacking', () => {
-        it("should decrease the health of opponent by 42.", () => {
+        it(`should decrease the health of opponent by ${BASE_DAMAGE}.`, () => {
             const character = new Character();
-            let damage = 42;
             const opponent = new Character();
 
             character.attack(opponent);
 
-            const expectedHealth = 1000 - damage;
+            const expectedHealth = 1000 - BASE_DAMAGE;
             expect(opponent.getHealth()).toBe(expectedHealth);
         });
     });
