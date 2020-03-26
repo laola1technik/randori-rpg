@@ -34,7 +34,12 @@ export default class Character {
     }
 
     private receiveHealth(healing: number) {
-        this.health += healing;
+        const increasedHealth = this.health + healing;
+        if (increasedHealth <= BASE_HEALTH) {
+            this.health = increasedHealth;
+        } else {
+            this.health = BASE_HEALTH;
+        }
     }
 }
 

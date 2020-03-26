@@ -54,6 +54,7 @@ describe('Character', () => {
             injured = new Character();
             injured.attack(injured);
         });
+
         it('should increase health of healed character', function () {
             const injuredHealth = injured.getHealth();
 
@@ -61,6 +62,14 @@ describe('Character', () => {
 
             const expectedHealth = injuredHealth + BASE_HEALING;
             expect(injured.getHealth()).toBe(expectedHealth);
+        });
+
+        it(`should not heal character above ${BASE_HEALTH}`, function () {
+            const healthyCharacter = new Character();
+
+            character.heal(healthyCharacter);
+
+            expect(healthyCharacter.getHealth()).toBe(BASE_HEALTH);
         });
     });
 });

@@ -1,12 +1,12 @@
 Character:
     Actions:
         * Heal
-            * can heal a live character
+            + can heal a live character
                 - given a live character with 100 hp
                   when healing is applied with 20 hp
                   then the number of hp is 120hp
             * HP can not rise above 1000 hp
-                - given a life character with 1000 hp
+                + given a life character with 1000 hp
                   when healing is applied to the same object
                   then the number of HP is not increased
                 - given a life character with 999 hp,
