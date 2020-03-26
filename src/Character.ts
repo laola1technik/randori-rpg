@@ -1,7 +1,7 @@
 import Weapon from "@/Weapon";
 
 export default class Character {
-    private readonly health: number;
+    private health: number;
 
     constructor() {
         this.health = 1000;
@@ -19,5 +19,10 @@ export default class Character {
     }
 
     attack(otherCharacter: Character) {
+        otherCharacter.reduceHealth(42);
+    }
+
+    private reduceHealth(healthPoints: number) {
+        this.health = this.health - healthPoints;
     }
 }

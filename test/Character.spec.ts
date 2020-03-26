@@ -1,5 +1,4 @@
 import Character from "@/Character";
-import Weapon from "@/Weapon";
 
 describe('Character', () => {
 
@@ -18,11 +17,10 @@ describe('Character', () => {
         });
     });
 
-    describe('when damaged it', () => {
+    describe('when damaged', () => {
         it("should decrease the health by 42.", () => {
             const character = new Character();
             let damage = 42;
-            character.equip(new Weapon(damage));
             const otherCharacter = new Character();
 
             character.attack(otherCharacter);
