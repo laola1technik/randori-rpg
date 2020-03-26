@@ -34,7 +34,8 @@ describe('Character', () => {
             const opponent = new Character();
             const opponentHealth = opponent.getHealth();
 
-            for (let i = 0; i < (opponentHealth / BASE_DAMAGE) + 1; i++) {
+            const attacksToReduceHealthBelow0 = (opponentHealth / BASE_DAMAGE) + 1;
+            for (let i = 0; i < attacksToReduceHealthBelow0; i++) {
                 character.attack(opponent);
             }
 
