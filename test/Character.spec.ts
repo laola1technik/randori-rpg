@@ -28,5 +28,18 @@ describe('Character', () => {
             const expectedHealth = opponentHealth - BASE_DAMAGE;
             expect(opponent.getHealth()).toBe(expectedHealth);
         });
+
+        it('should not decrease the health of an opponent below 0.', () => {
+            const character = new Character();
+            const opponent = new Character();
+            const opponentHealth = opponent.getHealth();
+
+            for (let i = 0; i < (opponentHealth / BASE_DAMAGE) + 1; i++) {
+                character.attack(opponent);
+            }
+
+            expect(opponent.getHealth()).toBe(0);
+        });
+
     });
 });
