@@ -36,25 +36,24 @@ describe('Character', () => {
         });
 
         it('should not decrease the health of an opponent below 0.', () => {
-            killOpponent();
+            killCharacter(character, opponent);
 
             expect(opponent.getHealth()).toBe(0);
         });
 
-        it('should kill the opponent', function () {
-            killOpponent();
+        it('should kill the opponent.', function () {
+            killCharacter(character, opponent);
 
             expect(opponent.isAlive()).toBe(false);
         });
-
-        function killOpponent() {
-            const opponentHealth = opponent.getHealth();
-
-            const attacksToReduceHealthBelow0 = (opponentHealth / BASE_DAMAGE) + 1;
-            for (let i = 0; i < attacksToReduceHealthBelow0; i++) {
-                character.attack(opponent);
-            }
-        }
-
     });
 });
+
+function killCharacter(character, opponent) {
+    const opponentHealth = opponent.getHealth();
+
+    const attacksToReduceHealthBelow0 = (opponentHealth / BASE_DAMAGE) + 1;
+    for (let i = 0; i < attacksToReduceHealthBelow0; i++) {
+        character.attack(opponent);
+    }
+}

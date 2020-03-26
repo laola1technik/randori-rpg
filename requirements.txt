@@ -19,23 +19,19 @@ Character:
                 - given a dead character and a live character,
                   when the live character heals the dead character,
                   then the dead character stays dead
-        * Deal Damage
-            * can reduce hp of another character
+        + Deal Damage
+            + can reduce hp of another character
                 + given a character with 1000hp
                   when receive a damage of 42hp
                   then the character has a hp of 958
             + HP can not go below 0
-
-            * dies if health below 1
-                - given a character with 1000 hp
-                  when receive damage of 1000 hp
-                  then the character is dead
+            + dies if health below 1
     State:
-        * alive / dead
+        + alive / dead
             + given a new character
               when spawning
               character is alive
-        * has 1000 hp (health points) at the beginning
+        + has 1000 hp (health points) at the beginning
             + given a new character
               when spawning
               character has 1000hp
