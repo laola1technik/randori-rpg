@@ -1,9 +1,11 @@
 import Character, {BASE_DAMAGE, BASE_HEALTH} from "@/Character";
 
+
 describe('Character', () => {
     let character: Character;
     beforeEach(() => {
         character = new Character();
+
     });
 
     describe('when created', () => {
@@ -34,15 +36,25 @@ describe('Character', () => {
         });
 
         it('should not decrease the health of an opponent below 0.', () => {
+            killOpponent();
+
+            expect(opponent.getHealth()).toBe(0);
+        });
+
+        it('should kill the opponent', function () {
+            killOpponent();
+
+            expect(opponent.isAlive()).toBe(false);
+        });
+
+        function killOpponent() {
             const opponentHealth = opponent.getHealth();
 
             const attacksToReduceHealthBelow0 = (opponentHealth / BASE_DAMAGE) + 1;
             for (let i = 0; i < attacksToReduceHealthBelow0; i++) {
                 character.attack(opponent);
             }
-
-            expect(opponent.getHealth()).toBe(0);
-        });
+        }
 
     });
 });
