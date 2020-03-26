@@ -1,5 +1,3 @@
-import Weapon from "@/Weapon";
-
 export default class Character {
     private health: number;
 
@@ -15,14 +13,11 @@ export default class Character {
         return this.health;
     }
 
-    equip(weapon: Weapon) {
-    }
-
     attack(otherCharacter: Character) {
-        otherCharacter.reduceHealth(42);
+        otherCharacter.receiveDamage(42);
     }
 
-    private reduceHealth(healthPoints: number) {
-        this.health = this.health - healthPoints;
+    private receiveDamage(damage: number) {
+        this.health = this.health - damage;
     }
 }

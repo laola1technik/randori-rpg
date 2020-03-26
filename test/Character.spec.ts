@@ -17,16 +17,16 @@ describe('Character', () => {
         });
     });
 
-    describe('when damaged', () => {
-        it("should decrease the health by 42.", () => {
+    describe('when attacking', () => {
+        it("should decrease the health of opponent by 42.", () => {
             const character = new Character();
             let damage = 42;
-            const otherCharacter = new Character();
+            const opponent = new Character();
 
-            character.attack(otherCharacter);
+            character.attack(opponent);
 
             const expectedHealth = 1000 - damage;
-            expect(otherCharacter.getHealth()).toBe(expectedHealth);
+            expect(opponent.getHealth()).toBe(expectedHealth);
         });
     });
 });
