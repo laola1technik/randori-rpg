@@ -1,26 +1,30 @@
 import Character, {BASE_DAMAGE, BASE_HEALTH} from "@/Character";
 
 describe('Character', () => {
+    let character: Character;
+    beforeEach(() => {
+        character = new Character();
+    });
 
     describe('when created', () => {
 
         it('should be alive.', () => {
-            const character = new Character();
-
             expect(character.isAlive()).toBe(true);
         });
 
         it(`should have ${BASE_HEALTH} health.`, () => {
-            const character = new Character();
-
             expect(character.getHealth()).toBe(BASE_HEALTH);
         });
     });
 
     describe('when attacking', () => {
+        let opponent: Character;
+
+        beforeEach(() => {
+            opponent = new Character();
+        });
+
         it(`should decrease the health of opponent by ${BASE_DAMAGE}.`, () => {
-            const character = new Character();
-            const opponent = new Character();
             const opponentHealth = opponent.getHealth();
 
             character.attack(opponent);
@@ -30,8 +34,6 @@ describe('Character', () => {
         });
 
         it('should not decrease the health of an opponent below 0.', () => {
-            const character = new Character();
-            const opponent = new Character();
             const opponentHealth = opponent.getHealth();
 
             const attacksToReduceHealthBelow0 = (opponentHealth / BASE_DAMAGE) + 1;
