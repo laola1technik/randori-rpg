@@ -1,4 +1,4 @@
-import Character, {BASE_DAMAGE} from "@/Character";
+import Character, {BASE_DAMAGE, BASE_HEALTH} from "@/Character";
 
 describe('Character', () => {
 
@@ -10,10 +10,10 @@ describe('Character', () => {
             expect(character.isAlive()).toBe(true);
         });
 
-        it("should have 1000 health.", () => {
+        it(`should have ${BASE_HEALTH} health.`, () => {
             const character = new Character();
 
-            expect(character.getHealth()).toBe(1000);
+            expect(character.getHealth()).toBe(BASE_HEALTH);
         });
     });
 
@@ -21,10 +21,11 @@ describe('Character', () => {
         it(`should decrease the health of opponent by ${BASE_DAMAGE}.`, () => {
             const character = new Character();
             const opponent = new Character();
+            const opponentHealth = opponent.getHealth();
 
             character.attack(opponent);
 
-            const expectedHealth = 1000 - BASE_DAMAGE;
+            const expectedHealth = opponentHealth - BASE_DAMAGE;
             expect(opponent.getHealth()).toBe(expectedHealth);
         });
     });
